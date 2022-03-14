@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
 import s from "./Days.module.scss";
+import { Tabs } from "./Tabs";
 
 type Props = {};
 
@@ -74,10 +75,13 @@ export const Days = (props: Props) => {
   ];
 
   return (
-    <section className={s.days}>
-      {days.map((today: Day) => (
-        <Card today={today} key={today.day} />
-      ))}
-    </section>
+    <>
+      <Tabs />
+      <section className={s.days}>
+        {days.map((today: Day) => (
+          <Card today={today} key={today.day} />
+        ))}
+      </section>
+    </>
   );
 };
