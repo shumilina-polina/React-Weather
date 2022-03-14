@@ -12,7 +12,7 @@ export type Item = {
 };
 
 const ThisDayInfo = (props: Props) => {
-  const items = [
+  const items: Item[] = [
     {
       icon_id: "temp",
       name: "Температура",
