@@ -5,7 +5,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $lite-background;
+  background: $light-background;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -45,7 +45,7 @@
     color: rgba(147, 156, 176, 1); //$base-color;
   }
   .indicator__value {
-    color: $lite-color;
+    color: $light-color;
   }
 }
 
