@@ -5,7 +5,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $light-background;
+  background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -42,10 +42,11 @@
     font-size: 14px;
   }
   .indicator__name {
-    color: rgba(147, 156, 176, 1); //$base-color;
+    color: $base-color;
   }
   .indicator__value {
-    color: $light-color;
+    color: var(#{--text-color-default});
+    font-weight: 400;
   }
 }
 
