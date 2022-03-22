@@ -1,4 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { AxiosResponse } from "axios";
+import { Weather } from "./../types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type Response = {
   status: number;
@@ -6,7 +8,7 @@ type Response = {
 };
 
 type CurrentWeather = {
-  weather: any;
+  weather: Weather;
   isLoading: boolean;
   response: Response;
 };
@@ -27,8 +29,26 @@ export const currentWeatherSlice = createSlice({
     fetchCurrentWeather(state) {
       state.isLoading = true; //fetching data
     },
-    fetchCurrentWeatherSuccess(state,action:any) {
-        // state.weather =action.;
+    fetchCurrentWeatherSuccess(
+      state,
+      action: PayloadAction<AxiosResponse<Weather>>
+    ) {
+      state.isLoading = false;
+      state.weather = action.payload.data;
+      state.response = {
+        status: action.payload.status,
+        message: action.payload.statusText,
+      };
+    },
+    fetchCurrentWeatherError(
+      state,
+      action: PayloadAction<AxiosResponse<Weather>>
+    ) {
+      state.isLoading = false;
+      state.response = {
+        status: action.payload.status,
+        message: action.payload.statusText,
+      };
     },
   },
 });
