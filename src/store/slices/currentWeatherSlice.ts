@@ -52,3 +52,5 @@ export const currentWeatherSlice = createSlice({
     },
   },
 });
+
+export default currentWeatherSlice.reducer
