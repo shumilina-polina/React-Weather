@@ -14,7 +14,11 @@ type CurrentWeather = {
 };
 
 const initialState: CurrentWeather = {
-  weather: {},
+  weather: {
+    main: {
+      temp: 0,
+    },
+  },
   isLoading: false,
   response: {
     status: 0,
@@ -53,4 +57,4 @@ export const currentWeatherSlice = createSlice({
   },
 });
 
-export default currentWeatherSlice.reducer
+export default currentWeatherSlice.reducer;

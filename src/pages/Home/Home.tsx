@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useCustomDispatch } from "../../hooks/store";
+import { useCustomDispatch, useCustomSelector } from "../../hooks/store";
 import { fetchCurrentWeather } from "../../store/thunks/fetchCurrentWeather";
 import { Days } from "./components/Days/Days";
 import ThisDay from "./components/ThisDay/ThisDay";
@@ -11,14 +11,18 @@ type Props = {};
 const Home = (props: Props) => {
   const dispatch = useCustomDispatch();
 
+  const { weather, isLoading, response } = useCustomSelector(
+    (state) => state.currentWeatherSliceReducer
+  );
+
   useEffect(() => {
-    dispatch(fetchCurrentWeather('paris'));
+    dispatch(fetchCurrentWeather("paris"));
   }, []);
 
   return (
     <div className={s.home}>
       <div className={s.wrapper}>
-        <ThisDay />
+        <ThisDay weather={weather} />
         <ThisDayInfo />
       </div>
       <Days />

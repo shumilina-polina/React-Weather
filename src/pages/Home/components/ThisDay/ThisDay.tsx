@@ -1,10 +1,13 @@
 import React from "react";
 import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
+import { Weather } from "../../../../store/types";
 import s from "./ThisDay.module.scss";
 
-type Props = {};
+type Props = {
+  weather: Weather;
+};
 
-const ThisDay = (props: Props) => {
+const ThisDay = ({ weather }: Props) => {
   return (
     <section className={s.this__day}>
       <div className={s.top__block}>
