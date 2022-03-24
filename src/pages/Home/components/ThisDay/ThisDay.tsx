@@ -23,7 +23,9 @@ const ThisDay = ({ weather }: Props) => {
     <section className={s.this__day}>
       <div className={s.top__block}>
         <div className={s.top__block_wrapper}>
-          <div className={s.this__temp}>{Math.floor(weather.current.temp)}°</div>
+          <div className={s.this__temp}>
+            {Math.floor(weather.current.temp)}°
+          </div>
           <div className={s.this__day_name}>
             {daysOfWeek[currentDate.getDay()]}
           </div>
@@ -31,9 +33,7 @@ const ThisDay = ({ weather }: Props) => {
         <GlobalSvgSelector id="sun" />
       </div>
       <div className={s.bottom__block}>
-        <div className={s.this__time}>
-          Время: <span>21:54</span>
-        </div>
+        <div className={s.this__time}>21:54</div>
         <div className={s.this__city}>Санкт-Петербург</div>
       </div>
     </section>

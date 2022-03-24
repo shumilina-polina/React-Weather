@@ -36,10 +36,10 @@ export const Popup = (props: Props) => {
         <div className={s.day}>
           <div className={s.day__temp}>12°</div>
           <div className={s.day__name}>Среда</div>
-          <div className={s.img}><GlobalSvgSelector id='sun'/></div>
-          <div className={s.day__time}>
-            Время: <span>21:54</span>
+          <div className={s.img}>
+            <GlobalSvgSelector id="sun" />
           </div>
+          <div className={s.day__time}>21:54</div>
           <div className={s.day__city}>Санкт-Петербург</div>
         </div>
         <div className={s.popup__items}>
