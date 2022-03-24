@@ -1,5 +1,14 @@
 export type Weather = {
-  main: {
+  current: {
     temp: number;
+    feels_like: number;
+    pressure: number;
+    wind_deg: number;
+    wind_speed: number;
+    weather: [
+      {
+        main: string;
+      }
+    ];
   };
 };
