@@ -18,7 +18,21 @@ const ThisDay = ({ weather }: Props) => {
     "Пятница",
     "Суббота",
   ];
-
+  let icon_id: string;
+  switch (weather.current.weather[0].main) {
+    case "Clouds":
+      icon_id = "mainly_cloudy";
+      break;
+    case "Snow":
+      icon_id = "snow";
+      break;
+    case "Rain":
+      icon_id = "rain";
+      break;
+    default:
+      icon_id = "sun";
+      break;
+  }
   return (
     <section className={s.this__day}>
       <div className={s.top__block}>
@@ -30,7 +44,7 @@ const ThisDay = ({ weather }: Props) => {
             {daysOfWeek[currentDate.getDay()]}
           </div>
         </div>
-        <GlobalSvgSelector id="sun" />
+        <GlobalSvgSelector id={icon_id} />
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>21:54</div>

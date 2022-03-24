@@ -1,3 +1,11 @@
+export type Daily = {
+  temp: {
+    day: number;
+    night: number;
+  };
+  weather: [{ main: string }];
+};
+
 export type Weather = {
   current: {
     temp: number;
@@ -11,4 +19,5 @@ export type Weather = {
       }
     ];
   };
+  daily: Daily[];
 };

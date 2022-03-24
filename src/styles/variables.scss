@@ -23,25 +23,25 @@ $card-box-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
   //body bg
   --body-background-dark: #{$body-background-dark};
   --body-background-light: #{$body-background-light};
-  --body-background-default: var(#{--body-background-light});
+  --body-background-default: var(#{--body-background-dark});
 
   //components bg
   --components-background-dark: #{$components-background-dark};
   --components-background-light: #{$components-background-light};
-  --components-background-default: var(#{--components-background-light});
+  --components-background-default: var(#{--components-background-dark});
 
   //card bg
   --card-background-dark: #{$card-background-dark};
   --card-background-light: #{$card-background-light};
-  --card-background-default: var(#{--card-background-light});
+  --card-background-default: var(#{--card-background-dark});
 
   //card shadow
   --card-shadow-dark: #{$card-box-shadow-dark};
   --card-shadow-light: #{$card-box-shadow-light};
-  --card-shadow-default: var(#{--card-shadow-light});
+  --card-shadow-default: var(#{--card-shadow-dark});
 
   //text
   --text-color-dark: #{$dark-color};
   --text-color-light: #{$light-color};
-  --text-color-default: var(#{--text-color-light});
+  --text-color-default: var(#{--text-color-dark});
 }

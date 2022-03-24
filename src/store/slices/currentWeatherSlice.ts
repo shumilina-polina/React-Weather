@@ -1,3 +1,4 @@
+import { days } from "./../../pages/Home/components/Days/Days";
 import { AxiosResponse } from "axios";
 import { Weather } from "./../types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -27,6 +28,7 @@ const initialState: CurrentWeather = {
         },
       ],
     },
+    daily: [],
   },
   isLoading: false,
   response: {
@@ -34,6 +36,16 @@ const initialState: CurrentWeather = {
     message: "",
   },
 };
+
+for (let i = 0; i < days.length; i++) {
+  initialState.weather.daily[i] = {
+    temp: {
+      day: 0,
+      night: 0,
+    },
+    weather: [{ main: "" }],
+  };
+}
 
 export const currentWeatherSlice = createSlice({
   name: "current_weather",
