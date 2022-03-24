@@ -21,8 +21,8 @@ const Header = (props: Props) => {
       ...styles,
       backgroundColor:
         theme.theme === Theme.DARK ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
-      width: "210px",
-      heigth: "37px",
+      width: "190px",
+      heigth: "27px",
       border: "none",
       borderRadius: "10px",
       zIndex: "100",
@@ -32,6 +32,7 @@ const Header = (props: Props) => {
       ...styles,
       color: theme.theme === Theme.DARK ? "#fff" : "#000",
       fontWeight: "500",
+      fontSize: "14px",
     }),
 
     option: (styles: any) => ({
@@ -40,6 +41,7 @@ const Header = (props: Props) => {
         theme.theme === Theme.DARK ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
       color: theme.theme === Theme.DARK ? "#fff" : "#000",
       fontWeight: "500",
+      fontSize: "14px",
     }),
 
     menu: (styles: any) => ({

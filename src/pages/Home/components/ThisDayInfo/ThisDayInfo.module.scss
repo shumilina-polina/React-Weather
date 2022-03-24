@@ -3,7 +3,7 @@
 .this__day_info {
   position: relative;
   padding: 40px;
-  max-width: 750px;
+  max-width: 600px;
   width: 100%;
   background: var(#{--components-background-default});
   box-shadow: $box-shadow;
@@ -23,12 +23,12 @@
 
   .indicator,
   .indicator__name {
-    margin-right: 20px;
+    margin-right: 18px;
   }
 
   .indicator {
-    width: 38px;
-    height: 38px;
+    width: 31px;
+    height: 31px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@
 
   .indicator__value,
   .indicator__name {
-    font-size: 16px;
+    font-size: 15px;
   }
   .indicator__name {
     color: $base-color;
@@ -55,6 +55,6 @@
   top: 0;
   right: 0;
   width: 400px;
-  opacity: 0.6;
+  opacity: 0.3;
   border-radius: $border-radius;
 }

@@ -17,7 +17,7 @@
   background: var(#{--card-background-default});
   border-radius: 10px;
   padding: 10px;
-  width: 149px;
+  width: 125px;
   transition: 0.3s;
   cursor: pointer;
 
@@ -40,7 +40,7 @@
   .temp__day,
   .day {
     color: var(#{--text-color-default});
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
   }
 

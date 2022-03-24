@@ -1,8 +1,8 @@
 @import "../../../../styles/variables.scss";
 
 .this__day {
-  padding: 20px;
-  max-width: 400px;
+  padding: 25px;
+  max-width: 350px;
   width: 100%;
   background: var(#{--components-background-default});
   box-shadow: $box-shadow;
@@ -14,18 +14,18 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   svg {
-    width: 119px;
-    height: 119px;
+    width: 110px;
+    height: 110px;
   }
   .this__temp {
-    font-size: 96px;
+    font-size: 75px;
     font-weight: 500;
     color: $primary-color;
   }
   .this__day_name {
-    font-size: 40px;
+    font-size: 30px;
     color: var(#{--text-color-default});
   }
 }
@@ -34,6 +34,6 @@
   .this__time,
   .this__city {
     color: $base-color;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
