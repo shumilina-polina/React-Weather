@@ -1,6 +1,6 @@
-import { Weather } from "./../store/types";
+import { Weather } from "../store/types";
 import { AxiosResponse } from "axios";
-import api from "../axios";
+import api from "./axios";
 
 export class WeatherService {
   static getCurrentWeather(city: string): Promise<AxiosResponse<Weather>> {

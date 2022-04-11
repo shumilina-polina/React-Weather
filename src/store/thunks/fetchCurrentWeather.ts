@@ -1,5 +1,5 @@
 import { currentWeatherSlice } from "./../slices/currentWeatherSlice";
-import { WeatherService } from "./../../services/WeatherService";
+import { WeatherService } from "../../axios/WeatherService";
 import { AppDispatch } from "./../store";
 
 export const fetchCurrentWeather = (payload: string) => {

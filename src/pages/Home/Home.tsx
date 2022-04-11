@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useCustomDispatch, useCustomSelector } from "../../hooks/store";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentWeatherData } from "../../store/selectors";
 import { fetchCurrentWeather } from "../../store/thunks/fetchCurrentWeather";
 import { Days } from "./components/Days/Days";
@@ -10,11 +10,9 @@ import s from "./Home.module.scss";
 type Props = {};
 
 const Home = (props: Props) => {
-  const dispatch = useCustomDispatch();
+  const dispatch = useDispatch();
 
-  const { weather, isLoading, response } = useCustomSelector(
-    selectCurrentWeatherData
-  );
+  const { weather } = useSelector(selectCurrentWeatherData);
 
   useEffect(() => {
     dispatch(fetchCurrentWeather("saint petersburg"));

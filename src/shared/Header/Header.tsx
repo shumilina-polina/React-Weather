@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import GlobalSvgSelector from "../../assets/icons/global/GlobalSvgSelector";
-import { Theme } from "../../context/ThemeContext";
-import { useTheme } from "../../hooks/useTheme";
 import s from "./Header.module.scss";
+import { changeCssRootVariables } from "../Header/ChangeCssRootVariables";
 
 type Props = {};
 
 const Header = (props: Props) => {
-  const theme = useTheme();
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const options = [
     { value: "city-1", label: "Санкт-Петербург" },
@@ -19,8 +18,7 @@ const Header = (props: Props) => {
   const colourStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor:
-        theme.theme === Theme.DARK ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
+      backgroundColor: theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
       width: "190px",
       heigth: "27px",
       border: "none",
@@ -30,31 +28,34 @@ const Header = (props: Props) => {
 
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme.theme === Theme.DARK ? "#fff" : "#000",
+      color: theme === "dark" ? "#fff" : "#000",
       fontWeight: "500",
       fontSize: "14px",
     }),
 
     option: (styles: any) => ({
       ...styles,
-      backgroundColor:
-        theme.theme === Theme.DARK ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
-      color: theme.theme === Theme.DARK ? "#fff" : "#000",
+      backgroundColor: theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
+      color: theme === "dark" ? "#fff" : "#000",
       fontWeight: "500",
       fontSize: "14px",
     }),
 
     menu: (styles: any) => ({
       ...styles,
-      backgroundColor:
-        theme.theme === Theme.DARK ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
+      backgroundColor: theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
       zIndex: "100",
     }),
   };
 
   function changeTheme() {
-    theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
+    setTheme(theme === "light" ? "dark" : "light");
   }
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    changeCssRootVariables(theme);
+  }, [theme]);
 
   return (
     <header className={s.header}>
