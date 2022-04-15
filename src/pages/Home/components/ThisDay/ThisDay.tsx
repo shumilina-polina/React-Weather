@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
 import { Weather } from "../../../../store/types";
+import { CurrentTime } from "./CurrentTime";
 import s from "./ThisDay.module.scss";
 
 type Props = {
@@ -33,6 +34,7 @@ const ThisDay = ({ weather }: Props) => {
       icon_id = "sun";
       break;
   }
+
   return (
     <section className={s.this__day}>
       <div className={s.top__block}>
@@ -47,7 +49,7 @@ const ThisDay = ({ weather }: Props) => {
         <GlobalSvgSelector id={icon_id} />
       </div>
       <div className={s.bottom__block}>
-        <div className={s.this__time}>21:54</div>
+        <CurrentTime/>
         <div className={s.this__city}>Санкт-Петербург</div>
       </div>
     </section>
