@@ -3,16 +3,31 @@ import Select from "react-select";
 import GlobalSvgSelector from "../../assets/icons/global/GlobalSvgSelector";
 import s from "./Header.module.scss";
 import { changeCssRootVariables } from "../Header/ChangeCssRootVariables";
+import { useDispatch } from "react-redux";
+import {
+  CityOption,
+  cityOptionSlice,
+} from "../../store/slices/cityOptionSlice";
+// import cityOptionSliceReducer from "../../store/slices/cityOptionSlice";
+import { AppDispatch } from "../../store/store";
 
 type Props = {};
 
+interface Option {
+  value: string;
+  label: string;
+}
+
 const Header = (props: Props) => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const dispatch = useDispatch();
 
-  const options = [
-    { value: "city-1", label: "Санкт-Петербург" },
-    { value: "city-2", label: "Москва" },
-    { value: "city-3", label: "Новгород" },
+  const { changeCityOption } = cityOptionSlice.actions;
+
+  const options: Option[] = [
+    { value: CityOption.SaintPetersburg, label: "Санкт-Петербург" },
+    { value: CityOption.Moscow, label: "Москва" },
+    { value: CityOption.Novosibirsk, label: "Новосибирск" },
   ];
 
   const colourStyles = {
@@ -57,6 +72,12 @@ const Header = (props: Props) => {
     changeCssRootVariables(theme);
   }, [theme]);
 
+  const handleOption = (option: Option | null) => {
+    if (option) {
+      dispatch(changeCityOption(option.value));
+    }
+  };
+
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
@@ -73,6 +94,7 @@ const Header = (props: Props) => {
           defaultValue={options[0]}
           styles={colourStyles}
           options={options}
+          onChange={handleOption}
         />
       </div>
     </header>

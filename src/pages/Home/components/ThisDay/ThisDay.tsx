@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
+import { CityOption } from "../../../../store/slices/cityOptionSlice";
 import { Weather } from "../../../../store/slices/currentWeatherSlice";
+import { RootState } from "../../../../store/store";
 import { CurrentTime } from "./CurrentTime";
 import s from "./ThisDay.module.scss";
 
@@ -35,6 +38,24 @@ const ThisDay = ({ weather }: Props) => {
       break;
   }
 
+  const { cityName } = useSelector(
+    (state: RootState) => state.cityOptionSliceReducer
+  );
+  let cityLabel: string;
+  switch (cityName) {
+    case CityOption.SaintPetersburg:
+      cityLabel = "Санкт-Петербург";
+      break;
+    case CityOption.Moscow:
+      cityLabel = "Москва";
+      break;
+    case CityOption.Novosibirsk:
+      cityLabel = "Новосибирск";
+      break;
+    default:
+      cityLabel = "Санкт-Петербург";
+      break;
+  }
   return (
     <section className={s.this__day}>
       <div className={s.top__block}>
@@ -49,8 +70,8 @@ const ThisDay = ({ weather }: Props) => {
         <GlobalSvgSelector id={icon_id} />
       </div>
       <div className={s.bottom__block}>
-        <CurrentTime/>
-        <div className={s.this__city}>Санкт-Петербург</div>
+        <CurrentTime />
+        <div className={s.this__city}>{cityLabel}</div>
       </div>
     </section>
   );

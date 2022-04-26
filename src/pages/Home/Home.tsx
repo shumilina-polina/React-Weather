@@ -16,9 +16,13 @@ const Home = (props: Props) => {
     (state: RootState) => state.currentWeatherSliceReducer
   );
 
+  const { cityName } = useSelector(
+    (state: RootState) => state.cityOptionSliceReducer
+  );
+
   useEffect(() => {
-    dispatch(fetchCurrentWeather("saint petersburg"));
-  }, []);
+    dispatch(fetchCurrentWeather(cityName));
+  }, [cityName]);
 
   return (
     <div className={s.home}>
