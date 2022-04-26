@@ -8,8 +8,6 @@ import {
   CityOption,
   cityOptionSlice,
 } from "../../store/slices/cityOptionSlice";
-// import cityOptionSliceReducer from "../../store/slices/cityOptionSlice";
-import { AppDispatch } from "../../store/store";
 
 type Props = {};
 
