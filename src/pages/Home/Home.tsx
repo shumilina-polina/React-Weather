@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentWeatherData } from "../../store/selectors";
+import { RootState } from "../../store/store";
 import { fetchCurrentWeather } from "../../store/thunks/fetchCurrentWeather";
 import { Days } from "./components/Days/Days";
 import ThisDay from "./components/ThisDay/ThisDay";
@@ -12,7 +12,9 @@ type Props = {};
 const Home = (props: Props) => {
   const dispatch = useDispatch();
 
-  const { weather } = useSelector(selectCurrentWeatherData);
+  const { weather } = useSelector(
+    (state: RootState) => state.currentWeatherSliceReducer
+  );
 
   useEffect(() => {
     dispatch(fetchCurrentWeather("saint petersburg"));

@@ -1,5 +1,5 @@
 import React from "react";
-import { Weather } from "../../../../store/types";
+import { Weather } from "../../../../store/slices/currentWeatherSlice";
 import { Card } from "./Card";
 import s from "./Days.module.scss";
 import { Tabs } from "./Tabs";

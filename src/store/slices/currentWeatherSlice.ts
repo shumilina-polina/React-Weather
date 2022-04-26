@@ -1,20 +1,43 @@
 import { days } from "./../../pages/Home/components/Days/Days";
 import { AxiosResponse } from "axios";
-import { Weather } from "./../types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Response = {
+interface Daily {
+  temp: {
+    day: number;
+    night: number;
+  };
+  weather: [{ main: string }];
+}
+
+export interface Weather {
+  current: {
+    temp: number;
+    feels_like: number;
+    pressure: number;
+    wind_deg: number;
+    wind_speed: number;
+    weather: [
+      {
+        main: string;
+      }
+    ];
+  };
+  daily: Daily[];
+}
+
+interface Response {
   status: number;
   message: string;
-};
+}
 
-type CurrentWeather = {
+interface CurrentWeatherState {
   weather: Weather;
   isLoading: boolean;
   response: Response;
-};
+}
 
-const initialState: CurrentWeather = {
+const initialState: CurrentWeatherState = {
   weather: {
     current: {
       temp: 0,

@@ -1,6 +1,6 @@
 import React from "react";
 import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
-import { Weather } from "../../../../store/types";
+import { Weather } from "../../../../store/slices/currentWeatherSlice";
 import { CurrentTime } from "./CurrentTime";
 import s from "./ThisDay.module.scss";
 

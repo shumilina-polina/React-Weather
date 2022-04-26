@@ -1,4 +1,4 @@
-import { Weather } from "../store/types";
+import { Weather } from './../store/slices/currentWeatherSlice';
 import { AxiosResponse } from "axios";
 import api from "./axios";
 

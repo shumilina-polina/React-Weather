@@ -2,7 +2,7 @@ import React from "react";
 import s from "./ThisDayInfo.module.scss";
 import cloud from "../../../../assets/images/cloud.png";
 import ThisDayItem from "./ThisDayItem";
-import { Weather } from "../../../../store/types";
+import { Weather } from "../../../../store/slices/currentWeatherSlice";
 
 type Props = {
   weather: Weather;
