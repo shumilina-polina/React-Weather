@@ -2,7 +2,7 @@
 
 App for viewing the weather in different cities.
 
-[react-ts-weather-app2.herokuapp.com](https://react-ts-weather-app2.herokuapp.com/)
+[react-weather-vert.vercel.app](https://react-weather-vert.vercel.app/)
 
 ## Technologies
 
@@ -19,7 +19,7 @@ The application uses the [OpenWeather API](https://openweathermap.org/api).
 
 Приложение для просмотра погоды в разных городах.
 
-[react-ts-weather-app2.herokuapp.com](https://react-ts-weather-app2.herokuapp.com/)
+[react-weather-vert.vercel.app](https://react-weather-vert.vercel.app/)
 
 ## Технологии
 
